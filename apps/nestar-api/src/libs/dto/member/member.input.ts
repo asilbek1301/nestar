@@ -6,8 +6,8 @@ import { MemberAuthType, MemberType } from '../../enums/member.enum';
 export class MemberInput {
 	@IsNotEmpty()
 	@Length(3, 12)
-	@Field(() => String)
-	memberNick: string;
+	@Field(() => String) // GraphQL
+	memberNick: string; // TypeScript
 
 	@IsNotEmpty()
 	@Length(5, 12)
