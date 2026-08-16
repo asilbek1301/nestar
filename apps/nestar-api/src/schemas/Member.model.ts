@@ -105,6 +105,11 @@ const MemberSchema = new Schema(
 			default: 0,
 		},
 
+		memberBlocks: {
+			type: Number,
+			default: 0,
+		},
+
 		deletedAt: {
 			type: Date,
 		},
