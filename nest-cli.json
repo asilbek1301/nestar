@@ -25,6 +25,7 @@
       "entryFile": "main",
       "sourceRoot": "apps/nestar-batch/src",
       "compilerOptions": {
+        "webpack": true,
         "tsConfigPath": "apps/nestar-batch/tsconfig.app.json"
       }
     }
