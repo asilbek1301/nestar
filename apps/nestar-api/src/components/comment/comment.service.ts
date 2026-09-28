@@ -19,7 +19,7 @@ export class CommentService {
 		private readonly memberService: MemberService,
 		private readonly propertyService: PropertyService,
 		private readonly boardArticleService: BoardArticleService,
-	) {}
+	) { }
 
 	public async createComment(memberId: ObjectId, input: CommentInput): Promise<Comment> {
 		input.memberId = memberId;
@@ -73,7 +73,7 @@ export class CommentService {
 			{
 				new: true,
 			},
-		);
+		).exec();
 		if (!result) throw new InternalServerErrorException(Message.UPDATE_FAILED);
 
 		return result;
@@ -108,7 +108,7 @@ export class CommentService {
 	}
 
 	public async removeCommentByAdmin(input: ObjectId): Promise<Comment> {
-		const result = await this.commentModel.findByIdAndDelete(input);
+		const result = await this.commentModel.findByIdAndDelete(input).exec();
 		if (!result) throw new InternalServerErrorException(Message.REMOVE_FAILED);
 
 		return result;
